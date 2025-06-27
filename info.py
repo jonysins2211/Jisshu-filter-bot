@@ -16,37 +16,37 @@ def is_enabled(value, default):
 
 # Main
 SESSION = environ.get("SESSION", "Media_search")
-API_ID = int(environ.get("API_ID", ""))
-API_HASH = environ.get("API_HASH", "")
+API_ID = int(environ.get("API_ID", "22037991"))
+API_HASH = environ.get("API_HASH", "f88fd01b091240edbb9a06a6f67fb3b5")
 BOT_TOKEN = environ.get("BOT_TOKEN", "")
 PORT = environ.get("PORT", "8082")
 
 # Owners
 ADMINS = [
     int(admin) if id_pattern.search(admin) else admin
-    for admin in environ.get("ADMINS", "5672857559").split()
+    for admin in environ.get("ADMINS", "949657126").split()
 ]
 OWNER_USERNAME = environ.get(
-    "OWNER_USERNAME", "IM_JISSHU"
+    "OWNER_USERNAME", "Mladminbot"
 )  # without @ or https://t.me/
 USERNAME = environ.get("USERNAME", "")  # ADMIN USERNAME
 
 # Database Channel
 CHANNELS = [
     int(ch) if id_pattern.search(ch) else ch
-    for ch in environ.get("CHANNELS", "").split()
+    for ch in environ.get("CHANNELS", "-1001176901973 -1002096410592").split()
 ]
 
 # ForceSub Channel & Log Channels
-AUTH_CHANNEL = int(environ.get("AUTH_CHANNEL", ""))
+AUTH_CHANNEL = int(environ.get("AUTH_CHANNEL", "-1001622914589"))
 AUTH_REQ_CHANNEL = int(environ.get("AUTH_REQ_CHANNEL", ""))
-LOG_CHANNEL = int(environ.get("LOG_CHANNEL", ""))
-LOG_API_CHANNEL = int(environ.get("LOG_API_CHANNEL", ""))
-LOG_VR_CHANNEL = int(environ.get("LOG_VR_CHANNEL", ""))
+LOG_CHANNEL = int(environ.get("LOG_CHANNEL", "-1002134871596"))
+LOG_API_CHANNEL = int(environ.get("LOG_API_CHANNEL", "-1002134871596"))
+LOG_VR_CHANNEL = int(environ.get("LOG_VR_CHANNEL", "-1002134871596"))
 
 # MongoDB
-DATABASE_URI = environ.get("DATABASE_URI", "")
-DATABASE_NAME = environ.get("DATABASE_NAME", "Cluster0")
+DATABASE_URI = environ.get("DATABASE_URI", "mongodb+srv://rocketboy:7wx1Xh0zl4TCxNCt@cluster0.elksrrk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_NAME = environ.get("DATABASE_NAME", "Cluster")
 
 # Files index database url
 FILES_DATABASE = environ.get("FILES_DATABASE", "")
@@ -68,7 +68,7 @@ SUPPORT_CHAT = environ.get("SUPPORT_CHAT", "")
 MOVIE_GROUP_LINK = environ.get("MOVIE_GROUP_LINK", "")
 
 # Verification
-IS_VERIFY = is_enabled("IS_VERIFY", True)
+IS_VERIFY = is_enabled("IS_VERIFY", False)
 # ---------------------------------------------------------------
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/")
 TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/")
@@ -130,7 +130,7 @@ SEASONS = [f"season {i}" for i in range(1, 23)]
 START_IMG = (
     environ.get(
         "START_IMG",
-        "https://i.ibb.co/qpxpGmC/image.jpg https://i.ibb.co/DQ35zLZ/image.jpg",
+        "https://graph.org/file/a319f6b9ce3b993c6e22f.jpg ",
     )
 ).split()
 FORCESUB_IMG = environ.get("FORCESUB_IMG", "https://i.ibb.co/ZNC1Hnb/ad3f2c88a8f2.jpg")
@@ -147,7 +147,7 @@ REACTIONS = ["👀", "😱", "🔥", "😍", "🎉", "🥰", "😇", "⚡"]
 # Other Funtions
 FILE_AUTO_DEL_TIMER = int(environ.get("FILE_AUTO_DEL_TIMER", "600"))
 AUTO_FILTER = is_enabled("AUTO_FILTER", True)
-IS_PM_SEARCH = is_enabled("IS_PM_SEARCH", False)
+IS_PM_SEARCH = is_enabled("IS_PM_SEARCH", True)
 IS_SEND_MOVIE_UPDATE = is_enabled(
     "IS_SEND_MOVIE_UPDATE", False
 )  # Don't Change It ( If You Want To Turn It On Then Turn It On By Commands) We Suggest You To Make It Turn Off If You Are Indexing Files First Time.
@@ -160,7 +160,7 @@ IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", f"{script.IMDB_TEMPLATE_TXT}")
 LONG_IMDB_DESCRIPTION = is_enabled("LONG_IMDB_DESCRIPTION", False)
 PROTECT_CONTENT = is_enabled("PROTECT_CONTENT", False)
 SPELL_CHECK = is_enabled("SPELL_CHECK", True)
-LINK_MODE = is_enabled("LINK_MODE", True)
+LINK_MODE = is_enabled("LINK_MODE", False)
 TMDB_API_KEY = environ.get("TMDB_API_KEY", "")
 
 # Online Streaming And Download
@@ -173,7 +173,7 @@ if "DYNO" in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-URL = environ.get("FQDN", "")
+URL = environ.get("FQDN", "https://a-loki-bot1-8ef8e94f5b66.herokuapp.com/")
 
 # Commands
 admin_cmds = [
